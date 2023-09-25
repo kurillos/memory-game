@@ -23,6 +23,8 @@ const cards = [
 
 const gameBoard = document.getElementById('game-board');
 
+let selectedCards = [];
+
 /* Fonction de création de carte dans la Div game-board */
 
 function createCard(CardUrl) {
@@ -74,6 +76,36 @@ function onCardClick(e){
     const card = e.target.parentElement;
 
     card.classList.add("flip");
+
+    selectedCards.push(card);
+
+    if(selectedCards.length == 2){
+
+        if(selectedCards[0].dataset.value == selectedCards[1].dataset.value){
+
+            //on a trouvé une paire
+
+            selectedCards[0].classList.add("matched");
+
+            selectedCards[1].classList.add("matched");
+
+            selectedCards[0].removeEventListener('click', onCardClick);
+
+            selectedCards[1].removeEventListener('click', onCardClick);
+
+        }
+
+        else{
+
+            //on s'est trompé
+
+            selectedCards[0].classList.remove("flip");
+
+            selectedCards[1].classList.remove("flip");
+
+        }
+
+        selectedCards = [];
 
 }
 

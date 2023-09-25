@@ -43,3 +43,19 @@ body {
     opacity: 1;
 
 }
+
+.card.matched {
+
+    border: solid 4px rgb(0, 255, 0);
+  
+    box-sizing: border-box; 
+  
+    cursor: default;
+  
+  }
+  
+  .card .card-content {
+  
+      max-width: 100%;
+  
+  }
