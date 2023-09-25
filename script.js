@@ -45,3 +45,15 @@ function createCard(CardUrl) {
 
   }
 
+  function duplicateArray(arraySimple) {
+
+    let arrayDouble = [];
+
+    arrayDouble.push(...arraySimple);
+
+    arrayDouble.push(...arraySimple);
+
+      return arrayDouble;
+
+  }
+
