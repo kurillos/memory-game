@@ -59,8 +59,19 @@ function createCard(CardUrl) {
 
   }
 
+  function shuffleArray(arrayToshuffle){
 
-  const allCards = duplicateArray(cards);
+    const arrayShuffled = arrayToshuffle.sort(() => 0.5 - Math.random());
+
+    return arrayShuffled;
+
+}
+
+  let allCards = duplicateArray(cards);
+
+  // Mélanger le tableau
+
+  allCards = shuffleArray(allCards);
 
   allCards.forEach(card => {
 
@@ -69,5 +80,7 @@ function createCard(CardUrl) {
     gameBoard.appendChild(cardHtml);
 
 })
+
+
 
 
