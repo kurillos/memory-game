@@ -43,6 +43,8 @@ function createCard(CardUrl) {
 
     card.appendChild(cardContent);
 
+    card.addEventListener('click', onCardClick);
+
     return card;
 
   }
@@ -67,6 +69,14 @@ function createCard(CardUrl) {
 
 }
 
+function onCardClick(e){
+
+    const card = e.target.parentElement;
+
+    card.classList.add("flip");
+
+}
+
   let allCards = duplicateArray(cards);
 
   // Mélanger le tableau
@@ -80,6 +90,8 @@ function createCard(CardUrl) {
     gameBoard.appendChild(cardHtml);
 
 })
+
+
 
 
 
