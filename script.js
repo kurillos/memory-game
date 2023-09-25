@@ -95,6 +95,16 @@ function onCardClick(e){
 
                 selectedCards[1].removeEventListener('click', onCardClick);
 
+                const allCardNotFinded = document.querySelectorAll('.card:not(.matched)');
+
+                if(allCardNotFinded.length == 0){
+                
+                    //Le joueur a gagné
+                
+                    alert('Bravo, vous avez gagné');
+                
+                }
+
             }
 
             else{
