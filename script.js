@@ -21,6 +21,8 @@ const cards = [
 
   ];
 
+const gameBoard = document.getElementById('game-board');
+
 /* Fonction de création de carte dans la Div game-board */
 
 function createCard(CardUrl) {
@@ -56,4 +58,16 @@ function createCard(CardUrl) {
       return arrayDouble;
 
   }
+
+
+  const allCards = duplicateArray(cards);
+
+  allCards.forEach(card => {
+
+    const cardHtml = createCard(card);
+
+    gameBoard.appendChild(cardHtml);
+
+})
+
 
